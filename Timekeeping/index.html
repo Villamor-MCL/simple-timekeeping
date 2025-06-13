@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timekeeping</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Timekeeping</h1>
+
+    <form id="time-entry-form" autocomplete="off">
+      <div class="form-row">
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
+      </div>
+
+      <div class="form-row time-range">
+        <fieldset>
+          <legend>Start Time</legend>
+          <select id="start-hour" aria-label="Start hour"></select>
+          <select id="start-minute" aria-label="Start minute"></select>
+          <select id="start-ampm" aria-label="Start AM/PM">
+            <option>AM</option><option>PM</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>End Time</legend>
+          <select id="end-hour" aria-label="End hour"></select>
+          <select id="end-minute" aria-label="End minute"></select>
+          <select id="end-ampm" aria-label="End AM/PM">
+            <option>AM</option><option>PM</option>
+          </select>
+        </fieldset>
+      </div>
+
+      <div class="form-row lunch-break-row">
+        <input type="checkbox" id="lunch-break" />
+        <label for="lunch-break">Lunch Break (1 hour not counted)</label>
+      </div>
+
+      <button type="button" id="save-btn">Save Entry</button>
+    </form>
+
+    <section class="table-container">
+      <table id="entries-table" aria-label="Time entries table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Lunch Break</th>
+            <th>Hours</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
